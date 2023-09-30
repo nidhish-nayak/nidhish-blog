@@ -72,5 +72,7 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+		max-width: 960px;
+		margin: 0 auto;
 	}
 }
