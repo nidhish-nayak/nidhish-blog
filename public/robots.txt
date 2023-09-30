@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nid-blog/sitemap-index.xml
+Sitemap: https://nid-blog.vercel.app/sitemap-index.xml
