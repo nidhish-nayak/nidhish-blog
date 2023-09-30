@@ -46,7 +46,7 @@ const { toggleType } = Astro.props;
 			transition: 0.5s ease;
 		}
 		&:before {
-			background-color: #ffa41b;
+			background-color: #ffc400;
 		}
 
 		&:after {
@@ -56,12 +56,12 @@ const { toggleType } = Astro.props;
 		}
 	}
 
-	input[type="checkbox"].themeToggle {
+	input[type="checkbox"] {
 		display: none;
 		&:checked + label {
 			background-color: #fafafa;
 			&:before {
-				background-color: #09090b;
+				background-color: #6b00c2;
 				transform: translateX(25px);
 			}
 

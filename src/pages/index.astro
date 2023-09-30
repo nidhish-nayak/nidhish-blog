@@ -1,18 +1,9 @@
 ---
-
+import { SITE_TITLE } from "../consts";
+import BlogPost from "../layouts/BlogPost.astro";
 ---
 
-<html lang="en" class="light">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body
-		class="max-w-screen-lg px-2 mx-auto bg-light-background text-light-foreground dark:bg-dark-background dark:text-dark-foreground"
-	>
-		<h1>My Blog</h1>
-	</body>
-</html>
+<BlogPost>
+	<h1>{SITE_TITLE}</h1>
+	<p>THIS IS BLOG PAGE</p>
+</BlogPost>
