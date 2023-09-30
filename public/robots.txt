@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nid-blog/sitemap-index.xml

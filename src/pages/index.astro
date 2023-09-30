@@ -1,8 +1,10 @@
 ---
-
+import ButtonDark from "../components/ButtonDark.astro";
+import ButtonLight from "../components/ButtonLight.astro";
+import ToggleTheme from "../components/ToggleTheme.astro";
 ---
 
-<html lang="en">
+<html lang="en" class="light">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,7 +12,17 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body
+		class="max-w-screen-lg px-2 mx-auto bg-light-background text-light-foreground dark:bg-dark-background dark:text-dark-foreground"
+	>
+		<nav class="flex justify-between">
+			<h1>MyBlog</h1>
+			<div>
+				<a href="#">About</a>
+			</div>
+			<ToggleTheme />
+		</nav>
+		<ButtonDark text="Get Started" />
+		<ButtonLight text="Get Started" />
 	</body>
 </html>
