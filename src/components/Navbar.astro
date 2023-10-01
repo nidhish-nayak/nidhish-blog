@@ -6,16 +6,13 @@ import ToggleTheme from "./ToggleTheme.astro";
 	class="flex items-center justify-between h-16 mb-10 border-b border-slate-950 dark:border-light-background"
 >
 	<a href="/" class="flex">
-		<img
-			src="https://ik.imagekit.io/fabric01/nid-blog/logo.png?updatedAt=1696178063390"
-			alt="Logo"
-			class="h-10"
-		/>
-		<h1 class="-mx-1 text-2xl font-bold">idhish</h1>
+		<h1 class="text-xl font-bold">
+			<span class="text-amber-500 dark:text-purple-600">N</span>Blog
+		</h1>
 	</a>
 
 	<ul class="flex items-center justify-center">
-		<li>
+		<li id="listmain">
 			<a
 				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
 				href="/">Blog</a
@@ -34,5 +31,5 @@ import ToggleTheme from "./ToggleTheme.astro";
 			>
 		</li>
 	</ul>
-	<ToggleTheme />
+	<ToggleTheme toggleType="themeToggle" />
 </nav>

@@ -6,4 +6,24 @@ import BlogPost from "../layouts/BlogPost.astro";
 <BlogPost>
 	<h1>{SITE_TITLE}</h1>
 	<p>THIS IS BLOG PAGE</p>
+	<ul class="box-border flex mt-10">
+		<li>
+			<a
+				class="p-2 mr-2 font-semibold rounded-md bg-button-dark hover:bg-zinc-800 dark:hover:bg-zinc-300 text-button-light dark:bg-button-light dark:text-button-dark"
+				href="/posts/post-1/">Post 1</a
+			>
+		</li>
+		<li>
+			<a
+				class="p-2 mr-2 font-semibold rounded-md bg-button-dark hover:bg-zinc-800 dark:hover:bg-zinc-300 text-button-light dark:bg-button-light dark:text-button-dark"
+				href="/posts/post-2/">Post 2</a
+			>
+		</li>
+		<li>
+			<a
+				class="p-2 mr-2 font-semibold rounded-md bg-button-dark hover:bg-zinc-800 dark:hover:bg-zinc-300 text-button-light dark:bg-button-light dark:text-button-dark"
+				href="/posts/post-3/">Post 3</a
+			>
+		</li>
+	</ul>
 </BlogPost>
