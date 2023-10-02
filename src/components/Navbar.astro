@@ -1,11 +1,11 @@
 ---
-import ToggleTheme from "./ToggleTheme.astro";
+import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <nav
 	class="flex items-center justify-between h-16 mb-10 border-b border-slate-950 dark:border-light-background"
 >
-	<a href="/" class="flex">
+	<a href="/" class="flex w-8">
 		<h1 class="text-xl font-bold">
 			<span class="text-amber-500 dark:text-purple-600">N</span>Blog
 		</h1>
@@ -15,21 +15,30 @@ import ToggleTheme from "./ToggleTheme.astro";
 		<li id="listmain">
 			<a
 				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/">Blog</a
+				href="/"
+				rel="prefetch-intent"
 			>
+				Blog
+			</a>
 		</li>
 		<li>
 			<a
 				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/about/">About</a
+				href="/about/"
+				rel="prefetch-intent"
 			>
+				About
+			</a>
 		</li>
 		<li>
 			<a
 				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/tags/">Tags</a
+				href="/tags/"
+				rel="prefetch-intent"
 			>
+				Tags
+			</a>
 		</li>
 	</ul>
-	<ToggleTheme toggleType="themeToggle" />
+	<ThemeIcon />
 </nav>
