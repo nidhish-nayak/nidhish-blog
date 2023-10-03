@@ -20,13 +20,9 @@
 <style lang="scss">
 	#themeToggle {
 		border: 0;
-		background-color: none;
-	}
-
-	#themeToggle:hover {
-		.sun {
-			fill: black;
-		}
+		padding: 5px;
+		background-color: #f5f5f5;
+		border-radius: 12px;
 	}
 
 	.sun {
@@ -34,6 +30,16 @@
 	}
 	.moon {
 		fill: transparent;
+	}
+
+	:global(.dark) #themeToggle {
+		background-color: #18181b;
+	}
+
+	#themeToggle:hover {
+		.sun {
+			fill: black;
+		}
 	}
 
 	:global(.dark) #themeToggle:hover {
