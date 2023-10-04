@@ -1,19 +1,48 @@
 ---
 import BlogPost from "../layouts/BlogPost.astro";
+
+const pageTitle = "About Me";
+
+const identity = {
+	firstName: "Nidhish",
+	country: "India",
+	occupation: "Technical Writer",
+	hobbies: ["singing", "drawing", "cricket"],
+};
+
+const skills = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"React",
+	"Astro",
+	"Node",
+	"Redux",
+	"Typescript",
+	"Writing Docs",
+];
 ---
 
 <BlogPost>
-	<h1>My Astro Site</h1>
-	<h1>About Me</h1>
-	<h2>... and my new Astro site!</h2>
-
+	<h1>{pageTitle}</h1>
 	<p>
-		I am working through Astro's introductory tutorial. This is the second page
-		on my website, and it's the first one I built myself!
+		This site will update as I keep learning more things, so keep checking back
+		and see how my journey is going!
 	</p>
-
-	<p>
-		This site will update as I complete more of the tutorial, so keep checking
-		back and see how my journey is going!
-	</p>
+	<p>Here are a few facts about me:</p>
+	<ul>
+		<li>My name is {identity.firstName}.</li>
+		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+		{
+			identity.hobbies.length >= 2 && (
+				<li>
+					Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
+				</li>
+			)
+		}
+	</ul>
+	<p>My skills are:</p>
+	<ul>
+		{skills.map((skill) => <li>{skill}</li>)}
+	</ul>
 </BlogPost>
