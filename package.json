@@ -1,5 +1,5 @@
 {
-	"name": "nid-blog",
+	"name": "nidish-blog",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
@@ -10,11 +10,9 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"@astrojs/alpinejs": "^0.3.0",
 		"@astrojs/prefetch": "^0.4.0",
 		"@astrojs/sitemap": "^3.0.0",
 		"@astrojs/tailwind": "^5.0.0",
-		"@types/alpinejs": "^3.0.0",
 		"astro": "^3.2.0",
 		"sass": "^1.68.0",
 		"tailwindcss": "^3.0.24"
