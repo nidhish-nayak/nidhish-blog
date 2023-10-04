@@ -6,30 +6,38 @@ const pageTitle = "About Me";
 const identity = {
 	firstName: "Nidhish",
 	country: "India",
-	occupation: "Technical Writer",
+	occupation: "Software Engineer",
 	hobbies: ["singing", "drawing", "cricket"],
 };
 
 const skills = [
 	"HTML",
 	"CSS",
+	"SASS",
 	"JavaScript",
-	"React",
-	"Astro",
-	"Node",
-	"Redux",
 	"Typescript",
+	"React",
+	"Redux",
+	"Node",
+	"Express",
+	"MongoDB",
+	"GraphQL",
+	"Styled components",
+	"Firebase",
+	"Axios",
+	"Git",
+	"Astro",
 	"Writing Docs",
 ];
 ---
 
 <BlogPost>
-	<h1>{pageTitle}</h1>
+	<h1 class="mb-4 text-4xl font-bold">{pageTitle}</h1>
 	<p>
 		This site will update as I keep learning more things, so keep checking back
 		and see how my journey is going!
 	</p>
-	<p>Here are a few facts about me:</p>
+	<p class="mt-4 font-semibold">Here are a few details about me:</p>
 	<ul>
 		<li>My name is {identity.firstName}.</li>
 		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
@@ -41,8 +49,14 @@ const skills = [
 			)
 		}
 	</ul>
-	<p>My skills are:</p>
-	<ul>
-		{skills.map((skill) => <li>{skill}</li>)}
+	<p class="mt-4 font-semibold">My skills are:</p>
+	<ul class="flex flex-wrap mt-2">
+		{
+			skills.map((skill) => (
+				<li class="p-2 mb-2 mr-2 font-semibold rounded-lg bg-light-foreground text-light-background dark:bg-dark-foreground dark:text-dark-background">
+					{skill}
+				</li>
+			))
+		}
 	</ul>
 </BlogPost>
