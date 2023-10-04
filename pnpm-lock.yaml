@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@astrojs/alpinejs':
-    specifier: ^0.3.0
-    version: 0.3.0(@types/alpinejs@3.13.2)(alpinejs@3.13.1)
   '@astrojs/prefetch':
     specifier: ^0.4.0
     version: 0.4.0
@@ -17,9 +14,6 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.0
     version: 5.0.0(astro@3.2.0)(tailwindcss@3.3.3)
-  '@types/alpinejs':
-    specifier: ^3.0.0
-    version: 3.13.2
   astro:
     specifier: ^3.2.0
     version: 3.2.0(sass@1.68.0)
@@ -43,16 +37,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.19
-    dev: false
-
-  /@astrojs/alpinejs@0.3.0(@types/alpinejs@3.13.2)(alpinejs@3.13.1):
-    resolution: {integrity: sha512-vxyCZqDay5Eg6MFc2MgvrDF/r07sWVdQNi95qP+OhCB7gIYCAF+6tGk3qMxXHSw0Ywt7n6ZzILlokvaw8NIUtA==}
-    peerDependencies:
-      '@types/alpinejs': ^3.0.0
-      alpinejs: ^3.0.0
-    dependencies:
-      '@types/alpinejs': 3.13.2
-      alpinejs: 3.13.1
     dev: false
 
   /@astrojs/compiler@2.1.0:
@@ -812,10 +796,6 @@ packages:
       fastq: 1.15.0
     dev: false
 
-  /@types/alpinejs@3.13.2:
-    resolution: {integrity: sha512-kRGGjngGMCw8H4BIDbaDLwuGNIsrzdvt54kKqLe6O8ZLTNW5swEMr6j2ByH/vUo46ajqf2Qbxh6fcxPDrfEU+Q==}
-    dev: false
-
   /@types/babel__core@7.20.2:
     resolution: {integrity: sha512-pNpr1T1xLUc2l3xJKuPtsEky3ybxN3m4fJkknfIpTCTfIZCDW57oAg+EfCgIIp2rvCe0Wn++/FfodDS4YXxBwA==}
     dependencies:
@@ -913,26 +893,10 @@ packages:
     resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
     dev: false
 
-  /@vue/reactivity@3.1.5:
-    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
-    dependencies:
-      '@vue/shared': 3.1.5
-    dev: false
-
-  /@vue/shared@3.1.5:
-    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
-    dev: false
-
   /acorn@8.10.0:
     resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: false
-
-  /alpinejs@3.13.1:
-    resolution: {integrity: sha512-/LZ7mumW02V7AV5xTTftJFHS0I3KOXLl7tHm4xpxXAV+HJ/zjTT0n8MU7RZ6UoGPhmO/i+KEhQojaH/0RsH5tg==}
-    dependencies:
-      '@vue/reactivity': 3.1.5
     dev: false
 
   /ansi-align@3.0.1:
