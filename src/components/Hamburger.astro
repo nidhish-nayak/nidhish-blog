@@ -2,11 +2,23 @@
 import Links from "./Links.astro";
 ---
 
+<script>
+	document.querySelector(".hamburger").addEventListener("click", () => {
+		var x = document.getElementById("myLinks");
+
+		if (x.style.display === "block") {
+			x.style.display = "none";
+		} else {
+			x.style.display = "block";
+		}
+	});
+</script>
+
 <div class="hamburger">
 	<span class="line"></span>
 	<span class="line"></span>
 	<span class="line"></span>
-	<div class="links-container">
+	<div class="nav-links" id="myLinks">
 		<Links />
 	</div>
 </div>
@@ -37,21 +49,22 @@ import Links from "./Links.astro";
 		background-color: white;
 	}
 
-	.links-container {
+	.nav-links {
 		position: absolute;
-		display: block;
+		display: none;
 		z-index: 2;
 		right: 0;
 		top: 50px;
 		background-color: #fafafa;
 		color: #18181b;
-		padding: 1em;
-		border-radius: 10px;
-		border: 1px solid #555555;
+		padding: 0.75em 0.5em;
+		border-radius: 2px;
+		border: 1px solid #18181b;
 	}
 
-	:global(.dark) .links-container {
-		background-color: #2c2c2c;
+	:global(.dark) .nav-links {
+		border: 1px solid #fafafa;
+		background-color: #18181b;
 		color: #fafafa;
 	}
 </style>

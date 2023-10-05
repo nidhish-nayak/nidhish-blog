@@ -10,10 +10,12 @@ import { SITE_NAV_LINKS } from "../consts";
 					<li class="m-2 sm:m-0">
 						<a
 							class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-							href={`/${link.toLowerCase()}`}
+							href={
+								link.toLowerCase() === "blog" ? "/" : `/${link.toLowerCase()}`
+							}
 							rel="prefetch-intent"
 						>
-							{link === "" ? "Blog" : link}
+							{link}
 						</a>
 					</li>
 				);
