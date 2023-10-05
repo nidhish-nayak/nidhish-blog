@@ -1,0 +1,57 @@
+---
+import Links from "./Links.astro";
+---
+
+<div class="hamburger">
+	<span class="line"></span>
+	<span class="line"></span>
+	<span class="line"></span>
+	<div class="links-container">
+		<Links />
+	</div>
+</div>
+
+<style lang="scss">
+	.hamburger {
+		position: relative;
+		display: none;
+		padding-right: 0px;
+		cursor: pointer;
+		margin-bottom: -8px;
+		margin-left: 1em;
+
+		@media (max-width: 640px) {
+			display: block;
+		}
+	}
+
+	.hamburger .line {
+		display: block;
+		width: 25px;
+		height: 2px;
+		margin-bottom: 6px;
+		background-color: black;
+	}
+
+	:global(.dark) .hamburger .line {
+		background-color: white;
+	}
+
+	.links-container {
+		position: absolute;
+		display: block;
+		z-index: 2;
+		right: 0;
+		top: 50px;
+		background-color: #fafafa;
+		color: #18181b;
+		padding: 1em;
+		border-radius: 10px;
+		border: 1px solid #555555;
+	}
+
+	:global(.dark) .links-container {
+		background-color: #2c2c2c;
+		color: #fafafa;
+	}
+</style>

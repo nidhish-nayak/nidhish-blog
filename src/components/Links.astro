@@ -1,0 +1,23 @@
+---
+import { SITE_NAV_LINKS } from "../consts";
+---
+
+<main>
+	<ul class="flex flex-col items-center justify-center sm:flex-row">
+		{
+			SITE_NAV_LINKS.map((link) => {
+				return (
+					<li class="m-2 sm:m-0">
+						<a
+							class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
+							href={`/${link.toLowerCase()}`}
+							rel="prefetch-intent"
+						>
+							{link === "" ? "Blog" : link}
+						</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+</main>

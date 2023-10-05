@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = "Nidhish Blog";
 export const SITE_DESCRIPTION = "Welcome to my blog website!";
+export const SITE_NAV_LINKS = ["", "About", "Tags"];

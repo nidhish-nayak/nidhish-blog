@@ -1,45 +1,27 @@
 ---
+import Hamburger from "./Hamburger.astro";
+import Links from "./Links.astro";
+import Logo from "./Logo.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <nav
 	class="flex items-center justify-between h-16 mb-10 border-b border-slate-950 dark:border-light-background"
 >
-	<a href="/" class="flex">
-		<h1 class="text-xl font-bold">
-			<span class="text-amber-500 dark:text-purple-500">N</span>Blog
-		</h1>
-	</a>
-
-	<ul class="flex items-center justify-center">
-		<li id="listmain">
-			<a
-				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/"
-				rel="prefetch-intent"
-			>
-				Blog
-			</a>
-		</li>
-		<li>
-			<a
-				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/about/"
-				rel="prefetch-intent"
-			>
-				About
-			</a>
-		</li>
-		<li>
-			<a
-				class="px-3 py-2 font-semibold rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
-				href="/tags/"
-				rel="prefetch-intent"
-			>
-				Tags
-			</a>
-		</li>
-	</ul>
-
-	<ThemeIcon />
+	<Logo />
+	<div id="nav-links">
+		<Links />
+	</div>
+	<div class="flex justify-center items-center">
+		<ThemeIcon />
+		<Hamburger />
+	</div>
 </nav>
+
+<style>
+	#nav-links {
+		@media (max-width: 640px) {
+			display: none;
+		}
+	}
+</style>
