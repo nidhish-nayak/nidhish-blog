@@ -1,0 +1,30 @@
+---
+import BlogPost from "./BlogPost.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BlogPost>
+	<section class="flex flex-wrap sm:justify-between my-10">
+		<div>
+			<h1 class="font-bold text-4xl my-2 tracking-tight">
+				{frontmatter.title}
+			</h1>
+			<p class="my-2"><em>{frontmatter.description}</em></p>
+			<p>
+				<span class="font-semibold mr-1">Author:</span>
+				{frontmatter.author}
+			</p>
+			<p>
+				<span class="font-semibold mr-1">Published on:</span>
+				{frontmatter.pubDate.slice(0, 10)}
+			</p>
+		</div>
+		<img
+			class="bg-zinc-950 dark:bg-zinc-800 p-4 rounded-md mt-4 sm:m-0"
+			src={frontmatter.image.url}
+			width="300"
+			alt={frontmatter.image.alt}
+		/>
+	</section>
+	<slot />
+</BlogPost>
