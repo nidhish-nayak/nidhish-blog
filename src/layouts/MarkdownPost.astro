@@ -4,12 +4,20 @@ const { frontmatter } = Astro.props;
 ---
 
 <BlogPost>
-	<section class="flex flex-wrap sm:justify-between my-10">
-		<div>
+	<a
+		href="/"
+		class="bg-button-dark shadow-md font-semibold text-button-light hover:bg-black p-2 rounded-md dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
+	>
+		&larr; Back</a
+	>
+	<section
+		class="flex flex-wrap pb-8 pt-4 sm:justify-between mt-6 mb-10 border-zinc-300 border-b border-dashed dark:border-zinc-800"
+	>
+		<div class="md:max-w-sm">
 			<h1 class="font-bold text-4xl my-2 tracking-tight">
 				{frontmatter.title}
 			</h1>
-			<p class="my-2"><em>{frontmatter.description}</em></p>
+			<p class="mt-2 mb-4"><em>{frontmatter.description}</em></p>
 			<p>
 				<span class="font-semibold mr-1">Author:</span>
 				{frontmatter.author}
@@ -18,11 +26,24 @@ const { frontmatter } = Astro.props;
 				<span class="font-semibold mr-1">Published on:</span>
 				{frontmatter.pubDate.slice(0, 10)}
 			</p>
+			<div class="flex my-2">
+				<p class="font-semibold mr-1 mt-2">Tags:</p>
+				<div class="flex flex-wrap">
+					{
+						frontmatter.tags.map((tag) => {
+							return (
+								<p class="px-2 py-1 bg-zinc-200 m-1 rounded-sm dark:bg-button-dark">
+									{tag.toLowerCase()}
+								</p>
+							);
+						})
+					}
+				</div>
+			</div>
 		</div>
 		<img
-			class="bg-zinc-950 dark:bg-zinc-800 p-4 rounded-md mt-4 sm:m-0"
+			class="bg-zinc-950 dark:bg-zinc-800 p-4 rounded-md mt-4 sm:w-1/2 h-min"
 			src={frontmatter.image.url}
-			width="300"
 			alt={frontmatter.image.alt}
 		/>
 	</section>
