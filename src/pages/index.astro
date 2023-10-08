@@ -7,19 +7,46 @@ const indexTitle = "Home Page";
 <BlogPost>
 	<h1>{indexTitle}</h1>
 	<p>THIS IS BLOG PAGE</p>
-	<ul class="box-border flex mt-10">
+
+	<div class="grid grid-cols-2 gap-4">
 		{
 			allPosts.map((post) => (
-				<li>
-					<a
-						class="p-2 mr-2 font-semibold rounded-md bg-button-dark hover:bg-zinc-800 dark:hover:bg-zinc-300 text-button-light dark:bg-button-light dark:text-button-dark"
-						href={post.url}
-						rel="prefetch-intent"
-					>
-						{post.frontmatter.title}
-					</a>
-				</li>
+				<a href={post.url} rel="prefetch-intent">
+					<div class="relative">
+						<img
+							src={post.frontmatter.image.url}
+							alt="blogImage"
+							loading="lazy"
+							class="rounded-lg"
+						/>
+						<div class="glass">
+							<div>
+								<p class="font-semibold">{post.frontmatter.pubDate}</p>
+								<p>{post.frontmatter.readTime}</p>
+							</div>
+							<p>{post.frontmatter.author}</p>
+						</div>
+					</div>
+				</a>
 			))
 		}
-	</ul>
+	</div>
 </BlogPost>
+
+<style>
+	.glass {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom-left-radius: 0.5rem;
+		border-bottom-right-radius: 0.5rem;
+		position: absolute;
+		width: 100%;
+		padding: 20px 40px;
+		bottom: 0;
+		background: hsla(0, 0%, 5%, 0.522);
+		backdrop-filter: blur(13px) saturate(150%);
+		-webkit-backdrop-filter: blur(13px) saturate(150%);
+		z-index: 1;
+	}
+</style>

@@ -1,11 +1,12 @@
 ---
 layout: "../../layouts/MarkdownPost.astro"
 title: "First Blog Post"
-pubDate: 2022-07-01
+pubDate: "Jul 1, 2022"
 description: "This is the first post of my new Astro blog"
 author: "Nidhish"
+readTime: "4 min read"
 image:
-  url: "https://docs.astro.build/assets/full-logo-light.png"
+  url: "https://docs.astro.build/assets/full-logo-dark.png"
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---
