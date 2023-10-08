@@ -8,23 +8,25 @@ const indexTitle = "Home Page";
 	<h1>{indexTitle}</h1>
 	<p>THIS IS BLOG PAGE</p>
 
-	<div class="flex flex-wrap sm:grid sm:grid-cols-2 gap-4 mt-10">
+	<div class="flex flex-wrap justify-between items-center gap-8 mt-10">
 		{
 			allPosts.map((post) => (
 				<a href={post.url} rel="prefetch-intent">
 					<div class="relative">
-						<img
-							src={post.frontmatter.image.url}
-							alt="blogImage"
-							loading="lazy"
-							class="rounded-lg"
-						/>
-						<div class="glass px-5 py-2 sm:py-4 sm:px-8">
+						<div class="overflow-hidden">
+							<img
+								src={post.frontmatter.image.url}
+								alt="blogImage"
+								class="object-center w-[300px] h-[180px] sm:w-[440px] sm:h-[260px] hover:scale-110 ease-in-out duration-300"
+							/>
+						</div>
+
+						<div class="glass  text-white px-5 py-2 sm:py-4 sm:px-8">
 							<div>
 								<p class="font-semibold">{post.frontmatter.pubDate}</p>
 								<p>{post.frontmatter.readTime}</p>
 							</div>
-							<p>{post.frontmatter.author}</p>
+							<p class="font-semibold">{post.frontmatter.author}</p>
 						</div>
 					</div>
 				</a>
@@ -38,12 +40,10 @@ const indexTitle = "Home Page";
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-bottom-left-radius: 0.5rem;
-		border-bottom-right-radius: 0.5rem;
 		position: absolute;
 		width: 100%;
 		bottom: 0;
-		background: hsla(0, 0%, 5%, 0.522);
+		background: rgba(57, 56, 56, 0.52);
 		backdrop-filter: blur(13px) saturate(150%);
 		-webkit-backdrop-filter: blur(13px) saturate(150%);
 		z-index: 1;
