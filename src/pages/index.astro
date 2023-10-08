@@ -8,7 +8,7 @@ const indexTitle = "Home Page";
 	<h1>{indexTitle}</h1>
 	<p>THIS IS BLOG PAGE</p>
 
-	<div class="grid grid-cols-2 gap-4">
+	<div class="flex flex-wrap sm:grid sm:grid-cols-2 gap-4 mt-10">
 		{
 			allPosts.map((post) => (
 				<a href={post.url} rel="prefetch-intent">
@@ -19,7 +19,7 @@ const indexTitle = "Home Page";
 							loading="lazy"
 							class="rounded-lg"
 						/>
-						<div class="glass">
+						<div class="glass px-5 py-2 sm:py-4 sm:px-8">
 							<div>
 								<p class="font-semibold">{post.frontmatter.pubDate}</p>
 								<p>{post.frontmatter.readTime}</p>
@@ -42,7 +42,6 @@ const indexTitle = "Home Page";
 		border-bottom-right-radius: 0.5rem;
 		position: absolute;
 		width: 100%;
-		padding: 20px 40px;
 		bottom: 0;
 		background: hsla(0, 0%, 5%, 0.522);
 		backdrop-filter: blur(13px) saturate(150%);
