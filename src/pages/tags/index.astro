@@ -1,0 +1,19 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+
+const allPosts = await Astro.glob("../posts/*.md");
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+---
+
+<BlogPost>
+	<h1>TAGS PAGE:</h1>
+	<div class="flex flex-wrap gap-2 my-2">
+		{
+			tags.map((tag) => (
+				<p>
+					<a class="p-2 bg-zinc-200 rounded-md font-semibold hover:bg-zinc-300 dark:hover:bg-zinc-800 dark:bg-button-dark" href={`/tags/${tag}`}>{tag}</a>
+				</p>
+			))
+		}
+	</div>
+</BlogPost>
