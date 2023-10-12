@@ -3,7 +3,7 @@ import BlogPost from "./BlogPost.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BlogPost>
+<BlogPost title={frontmatter.title}>
 	<a
 		href="javascript:history.back()"
 		class="p-2 font-semibold rounded-md shadow-md bg-button-dark text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"

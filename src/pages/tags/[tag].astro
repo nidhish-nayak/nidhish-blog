@@ -27,7 +27,7 @@ const filteredPosts = posts.filter((post) =>
 );
 ---
 
-<BlogPost pageTitle={tag}>
+<BlogPost title={tag}>
 	<h1 class="font-semibold text-xl mb-4">Posts tagged with {tag}</h1>
 	<Posts allPosts={filteredPosts} />
 </BlogPost>
