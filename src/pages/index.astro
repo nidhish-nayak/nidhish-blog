@@ -1,51 +1,12 @@
 ---
+import Posts from "../components/Posts.astro";
 import BlogPost from "../layouts/BlogPost.astro";
+
 const allPosts = await Astro.glob("../pages/posts/*.md");
-const indexTitle = "Home Page";
+const indexTitle = "My Blogs";
 ---
 
-<BlogPost>
-	<h1>{indexTitle}</h1>
-	<p>THIS IS BLOG PAGE</p>
-
-	<div class="flex flex-wrap justify-between items-center gap-8 mt-10">
-		{
-			allPosts.map((post) => (
-				<a href={post.url} rel="prefetch-intent">
-					<div class="relative">
-						<div class="overflow-hidden">
-							<img
-								src={post.frontmatter.image.url}
-								alt="blogImage"
-								class="bg-zinc-300 dark:bg-zinc-800 w-[300px] h-[200px] object-center hover:scale-110 ease-in-out duration-300"
-							/>
-						</div>
-
-						<div class="glass  text-white px-5 py-2 sm:py-4 sm:px-8">
-							<div>
-								<p class="font-semibold">{post.frontmatter.pubDate}</p>
-								<p>{post.frontmatter.readTime}</p>
-							</div>
-							<p class="font-semibold">{post.frontmatter.author}</p>
-						</div>
-					</div>
-				</a>
-			))
-		}
-	</div>
+<BlogPost title={indexTitle}>
+	<h1 class="mb-10 font-semibold text-2xl">{indexTitle}</h1>
+	<Posts allPosts={allPosts} />
 </BlogPost>
-
-<style>
-	.glass {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: absolute;
-		width: 100%;
-		bottom: 0;
-		background: rgba(57, 56, 56, 0.52);
-		backdrop-filter: blur(13px) saturate(150%);
-		-webkit-backdrop-filter: blur(13px) saturate(150%);
-		z-index: 1;
-	}
-</style>

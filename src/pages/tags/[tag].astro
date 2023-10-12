@@ -1,4 +1,5 @@
 ---
+import Posts from "../../components/Posts.astro";
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
@@ -27,14 +28,6 @@ const filteredPosts = posts.filter((post) =>
 ---
 
 <BlogPost pageTitle={tag}>
-	<p>Posts tagged with {tag}</p>
-	<ul>
-		{
-			filteredPosts.map((post) => (
-				<li>
-					<a href={post.url}>{post.frontmatter.title}</a>
-				</li>
-			))
-		}
-	</ul>
+	<h1 class="font-semibold text-xl mb-4">Posts tagged with {tag}</h1>
+	<Posts allPosts={filteredPosts} />
 </BlogPost>
