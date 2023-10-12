@@ -23,8 +23,12 @@ const { frontmatter } = Astro.props;
 				{frontmatter.author}
 			</p>
 			<p>
-				<span class="mr-1 font-semibold">Published on:</span>
-				{frontmatter.pubDate}
+				<span class="mr-1 font-semibold">Published:</span>
+				{
+					new Date(frontmatter.pubDate).toDateString().slice(4, 10) +
+						", " +
+						new Date(frontmatter.pubDate).toDateString().slice(10, 15)
+				}
 			</p>
 			<div class="flex my-2">
 				<p class="mt-2 mr-1 font-semibold">Tags:</p>

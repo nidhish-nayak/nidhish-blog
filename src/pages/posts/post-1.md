@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/MarkdownPost.astro"
 title: "First Blog Post"
-pubDate: "Jul 1, 2022"
+pubDate: 2022-07-01
 description: "This is the first post of my new Astro blog"
 author: "Nidhish"
 readTime: "4 min read"
@@ -15,7 +15,8 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 
 ## What I've accomplished
 
-```
+```js
+//This is a code block
 const myPost = "This is post 1";
 console.log(myPost);
 ```

@@ -2,7 +2,7 @@
 const { allPosts } = Astro.props;
 ---
 
-<main class="flex flex-wrap justify-between items-center gap-8">
+<main class="flex flex-wrap justify-start items-center gap-8">
 	{
 		allPosts.map((post) => (
 			<a href={post.url} rel="prefetch-intent">
@@ -15,9 +15,17 @@ const { allPosts } = Astro.props;
 						/>
 					</div>
 
-					<div class="glass  text-white px-5 py-2 sm:py-4 sm:px-8">
+					<div class="glass  text-white px-5 py-2 sm:py-4 sm:px-6">
 						<div>
-							<p class="font-semibold">{post.frontmatter.pubDate}</p>
+							<p class="font-semibold">
+								{new Date(post.frontmatter.pubDate)
+									.toDateString()
+									.slice(4, 10) +
+									", " +
+									new Date(post.frontmatter.pubDate)
+										.toDateString()
+										.slice(10, 15)}
+							</p>
 							<p>{post.frontmatter.readTime}</p>
 						</div>
 						<p class="font-semibold">{post.frontmatter.author}</p>
