@@ -7,18 +7,20 @@ import ThemeIcon from "./ThemeIcon.astro";
 ---
 
 <nav
-	class="flex items-center justify-between h-16 mb-10 border-b border-slate-950 dark:border-light-background"
+	class="flex items-center justify-between h-16 pt-4 mb-10 dark:border-light-background"
 >
 	<Logo />
+
 	<div id="nav-links">
 		<Links />
 	</div>
-	<div class="flex justify-center items-center">
+
+	<div class="flex items-center justify-center">
 		<a
 			href={MY_SOCIAL_LINKS.website}
 			target="_blank"
 			title="My Website Link"
-			class="p-2 mr-1 rounded-xl text-black dark:text-dark-foreground hover:bg-zinc-100 dark:hover:bg-zinc-800"
+			class="p-2 mr-1 text-black rounded-xl dark:text-dark-foreground hover:bg-zinc-100 dark:hover:bg-zinc-800"
 		>
 			<svg
 				width="24"

@@ -11,8 +11,9 @@ module.exports = {
 				"light-foreground": "#09090b",
 				"button-dark": "#18181B",
 				"button-light": "#FAFAFA",
+				"text-dark": "#DFD0FF",
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("@tailwindcss/typography")],
 };

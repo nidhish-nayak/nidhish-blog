@@ -3,20 +3,16 @@ import BlogPost from "./BlogPost.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<BlogPost title={frontmatter.title}>
-	<a
-		href="javascript:history.back()"
-		class="p-2 font-semibold rounded-md shadow-md bg-button-dark text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
-	>
-		&larr; Back</a
-	>
+<BlogPost title={frontmatter.title} backButton="true">
 	<section
-		class="flex flex-wrap pt-4 pb-8 mt-6 mb-10 border-b border-dashed sm:justify-between border-zinc-300 dark:border-zinc-800"
+		class="flex flex-wrap pb-8 mt-6 mb-10 border-b border-dashed sm:justify-between border-zinc-300 dark:border-zinc-800"
 	>
 		<div class="md:max-w-sm">
-			<h1 class="my-2 text-4xl font-bold tracking-tight">
+			<!-- <h1
+				class="my-2 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
+			>
 				{frontmatter.title}
-			</h1>
+			</h1> -->
 			<p class="mt-2 mb-4"><em>{frontmatter.description}</em></p>
 			<p>
 				<span class="mr-1 font-semibold">Author:</span>
@@ -46,10 +42,16 @@ const { frontmatter } = Astro.props;
 			</div>
 		</div>
 		<img
-			class="mt-4 rounded-md bg-zinc-950 dark:bg-zinc-800 sm:w-1/2 h-min"
 			src={frontmatter.image.url}
+			loading="eager"
+			class="w-full md:max-w-[1152px] my-8 rounded-md max-h-[500px] object-cover"
 			alt={frontmatter.image.alt}
+			width="1000"
+			height="500"
+			decoding="async"
 		/>
 	</section>
-	<slot />
+	<article class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert">
+		<slot />
+	</article>
 </BlogPost>

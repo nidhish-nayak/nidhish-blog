@@ -6,7 +6,7 @@ description: "This is the first post of my new Astro blog"
 author: "Nidhish"
 readTime: "4 min read"
 image:
-  url: "https://docs.astro.build/assets/full-logo-dark.png"
+  url: "https://ik.imagekit.io/fabric01/nid-blog/image-01.jpg?updatedAt=1697143313887"
   alt: "The full Astro logo."
 tags: ["astro", "blogging", "learning in public"]
 ---

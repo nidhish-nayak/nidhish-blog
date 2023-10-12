@@ -11,8 +11,6 @@ const identity = {
 };
 
 const skills = [
-	"HTML",
-	"CSS",
 	"SASS",
 	"JavaScript",
 	"Typescript",
@@ -24,39 +22,42 @@ const skills = [
 	"GraphQL",
 	"Styled Components",
 	"Firebase",
-	"Axios",
 	"Git",
 	"Astro",
-	"Writing Docs",
 ];
 ---
 
 <BlogPost title={pageTitle}>
-	<h1 class="mb-4 text-4xl font-bold">{pageTitle}</h1>
-	<p>
-		This site will update as I keep learning more things, so keep checking back
-		and see how my journey is going!
-	</p>
-	<p class="mt-4 font-semibold">Here are a few details about me:</p>
-	<ul>
-		<li>My name is {identity.firstName}.</li>
-		<li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-		{
-			identity.hobbies.length >= 2 && (
-				<li>
-					Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-				</li>
-			)
-		}
-	</ul>
-	<p class="mt-4 font-semibold">My skills are:</p>
-	<ul class="flex flex-wrap mt-2">
-		{
-			skills.map((skill) => (
-				<li class="p-2 mb-2 mr-2 font-semibold rounded-lg bg-zinc-200 text-button-dark dark:bg-button-dark dark:text-button-light">
-					{skill}
-				</li>
-			))
-		}
-	</ul>
+	<article>
+		<h2>Description</h2>
+		<p>
+			This site will update as I keep learning more things, so keep checking
+			back and see how my journey is going!
+		</p>
+		<h2 class="mt-4 font-semibold">Here are a few details about me:</h2>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>
+				I live in {identity.country} and I work as a {identity.occupation}.
+			</li>
+			{
+				identity.hobbies.length >= 2 && (
+					<li>
+						Two of my hobbies are: {identity.hobbies[0]} and{" "}
+						{identity.hobbies[1]}
+					</li>
+				)
+			}
+		</ul>
+		<h2 class="mt-4 font-semibold">My skills are:</h2>
+		<ul class="flex flex-wrap mt-2">
+			{
+				skills.map((skill) => (
+					<li class="p-2 mb-2 mr-2 font-semibold rounded-lg bg-zinc-200 text-button-dark dark:bg-button-dark dark:text-button-light">
+						{skill}
+					</li>
+				))
+			}
+		</ul>
+	</article>
 </BlogPost>

@@ -7,8 +7,7 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 
 <BlogPost title={pageTitle}>
-	<h1 class="font-semibold text-xl mb-4">{pageTitle}</h1>
-	<div class="flex flex-wrap gap-2 my-2">
+	<section class="flex flex-wrap gap-2 my-2">
 		{
 			tags.map((tag) => (
 				<p class="my-2">
@@ -21,5 +20,5 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 				</p>
 			))
 		}
-	</div>
+	</section>
 </BlogPost>
