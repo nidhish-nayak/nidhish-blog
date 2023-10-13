@@ -4,5 +4,5 @@ const { allPosts } = Astro.props;
 ---
 
 <main class="flex flex-wrap items-center justify-start gap-8">
-	{allPosts.toReversed().map((postData) => <Post post={postData} />)}
+	{allPosts.reverse().map((postData) => <Post post={postData} />)}
 </main>

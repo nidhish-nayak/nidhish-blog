@@ -8,6 +8,7 @@ const { post } = Astro.props;
 			<div class="overflow-hidden">
 				<img
 					src={post.frontmatter.image.url}
+					loading="lazy"
 					alt="blogImage"
 					class="bg-zinc-300 dark:bg-zinc-800 w-[300px] h-[200px] object-cover hover:scale-110 ease-in-out duration-300"
 				/>
