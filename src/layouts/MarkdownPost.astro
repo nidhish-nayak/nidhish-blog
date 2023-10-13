@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BlogPost from "./BlogPost.astro";
 const { frontmatter } = Astro.props;
 ---
@@ -8,11 +9,6 @@ const { frontmatter } = Astro.props;
 		class="flex flex-wrap pb-8 mt-6 mb-10 border-b border-dashed sm:justify-between border-zinc-300 dark:border-zinc-800"
 	>
 		<div class="md:max-w-sm">
-			<!-- <h1
-				class="my-2 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl"
-			>
-				{frontmatter.title}
-			</h1> -->
 			<p class="mt-2 mb-4"><em>{frontmatter.description}</em></p>
 			<p>
 				<span class="mr-1 font-semibold">Author:</span>
@@ -41,7 +37,7 @@ const { frontmatter } = Astro.props;
 				</div>
 			</div>
 		</div>
-		<img
+		<Image
 			src={frontmatter.image.url}
 			loading="eager"
 			class="w-full md:max-w-[1152px] my-8 rounded-md max-h-[500px] object-cover"

@@ -1,15 +1,43 @@
 ---
+import { Image } from "astro:assets";
 const { post } = Astro.props;
 ---
+
+<script>
+	// Lazy Loading
+	const blurDivs = document.querySelectorAll(".blur-load");
+
+	blurDivs.forEach((div) => {
+		function loaded() {
+			// Show image
+			div.classList.add("loaded");
+		}
+
+		const img = div.querySelector("img");
+		if (img.complete) {
+			loaded();
+		} else {
+			img.addEventListener("load", loaded);
+		}
+	});
+</script>
 
 <div>
 	<a href={post.url} rel="prefetch-intent">
 		<div class="relative">
-			<div class="overflow-hidden">
-				<img
+			<div
+				class="overflow-hidden blur-load"
+				style={post.frontmatter.image.lazyUrl
+					? `background-image: url(${post.frontmatter.image.lazyUrl})`
+					: ""}
+			>
+				<Image
 					src={post.frontmatter.image.url}
 					alt="blogImage"
-					class="bg-zinc-300 dark:bg-zinc-800 w-[300px] h-[200px] object-cover hover:scale-110 ease-in-out duration-300"
+					loading="lazy"
+					height="10"
+					width="10"
+					class="w-[360px] h-[240px] object-cover hover:scale-110 ease-in-out duration-300 block object-center"
 				/>
 			</div>
 
@@ -42,5 +70,18 @@ const { post } = Astro.props;
 		backdrop-filter: blur(13px) saturate(150%);
 		-webkit-backdrop-filter: blur(13px) saturate(150%);
 		z-index: 1;
+	}
+
+	.blur-load {
+		background-size: cover;
+		background-position: center;
+	}
+
+	.blur-load.loaded > img {
+		opacity: 1;
+	}
+
+	.blur-load > img {
+		opacity: 0;
 	}
 </style>
