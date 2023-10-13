@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
-const { post } = Astro.props;
+const { post, index } = Astro.props;
+
+const isFirstTwoElements = index === 0 || index === 1;
 ---
 
 <script>
@@ -35,9 +37,9 @@ const { post } = Astro.props;
 					src={post.frontmatter.image.url}
 					alt="blogImage"
 					loading="lazy"
-					height="10"
-					width="10"
-					class="w-[360px] h-[240px] object-cover hover:scale-110 ease-in-out duration-300 block object-center"
+					height="300"
+					width="500"
+					class="w-full h-[300px] object-cover hover:scale-110 ease-in-out duration-300 block object-center"
 				/>
 			</div>
 
@@ -56,6 +58,22 @@ const { post } = Astro.props;
 			</div>
 		</div>
 	</a>
+
+	<section class="flex flex-wrap justify-between p-1 mt-4 md:mb-8">
+		<article class={isFirstTwoElements ? "md:w-2/3" : "md:w-full"}>
+			<a href={post.url} rel="prefetch-intent">
+				<h2 class="text-xl font-semibold">{post.frontmatter.title}</h2>
+			</a>
+			<p class="mt-2">{post.frontmatter.description}</p>
+		</article>
+		<a href={post.url} rel="prefetch-intent">
+			<div
+				class="my-4 font-semibold hover:translate-x-1 hover:text-orange-600 dark:hover:text-purple-300"
+			>
+				Read More &#129125;
+			</div>
+		</a>
+	</section>
 </div>
 
 <style>
