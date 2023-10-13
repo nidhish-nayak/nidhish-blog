@@ -14,15 +14,17 @@ import Navbar from "../components/Navbar.astro";
 		<title>{title}</title>
 	</head>
 	<body
-		class="px-5 mx-auto antialiased xl:px-0 md:max-w-6xl bg-light-background text-light-foreground dark:bg-dark-background dark:text-dark-foreground"
+		class="px-5 mx-auto antialiased xl:px-0 md:max-w-6xl
+		bg-gradient-to-b from-[#FAFAFA] via-[#FAFAFA] to-light-background
+		text-light-foreground dark:bg-gradient-to-b dark:from-[#0A0910] dark:via-[#0A0910] dark:to-black dark:text-dark-foreground"
 	>
 		<Navbar />
-		<section>
+		<section class="min-h-[70vh]">
 			{
 				backButton ? (
 					<a
 						href="javascript:history.back()"
-						class="p-2 font-semibold rounded-md shadow-md bg-button-dark text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
+						class="p-2 font-semibold rounded-md bg-zinc-800 text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
 					>
 						&larr; Back
 					</a>
@@ -31,7 +33,7 @@ import Navbar from "../components/Navbar.astro";
 				)
 			}
 
-			<div class="flex items-center gap-2 my-12">
+			<div class="flex items-start md:items-center gap-2 my-12">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="40"

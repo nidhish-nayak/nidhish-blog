@@ -1,52 +1,8 @@
 ---
+import Post from "./Post.astro";
 const { allPosts } = Astro.props;
 ---
 
 <main class="flex flex-wrap items-center justify-start gap-8">
-	{
-		allPosts.map((post) => (
-			<a href={post.url} rel="prefetch-intent">
-				<div class="relative">
-					<div class="overflow-hidden">
-						<img
-							src={post.frontmatter.image.url}
-							alt="blogImage"
-							class="bg-zinc-300 dark:bg-zinc-800 w-[300px] h-[200px] object-cover hover:scale-110 ease-in-out duration-300"
-						/>
-					</div>
-
-					<div class="px-5 py-2 text-sm text-white glass sm:py-3 sm:px-6">
-						<div>
-							<p class="font-semibold">
-								{new Date(post.frontmatter.pubDate)
-									.toDateString()
-									.slice(4, 10) +
-									", " +
-									new Date(post.frontmatter.pubDate)
-										.toDateString()
-										.slice(10, 15)}
-							</p>
-							<p>{post.frontmatter.readTime}</p>
-						</div>
-						<p>{post.frontmatter.author}</p>
-					</div>
-				</div>
-			</a>
-		))
-	}
+	{allPosts.toReversed().map((postData) => <Post post={postData} />)}
 </main>
-
-<style>
-	.glass {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: absolute;
-		width: 100%;
-		bottom: 0;
-		background: rgba(57, 56, 56, 0.52);
-		backdrop-filter: blur(13px) saturate(150%);
-		-webkit-backdrop-filter: blur(13px) saturate(150%);
-		z-index: 1;
-	}
-</style>
