@@ -1,6 +1,5 @@
 ---
 const { title, tagTitle, backButton } = Astro.props;
-import { Fragment } from "astro/jsx-runtime";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 ---
@@ -33,7 +32,7 @@ import Navbar from "../components/Navbar.astro";
 				)
 			}
 
-			<div class="flex items-start md:items-center gap-2 my-12">
+			<div class="flex items-start gap-2 my-12 md:items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="40"
@@ -72,6 +71,10 @@ import Navbar from "../components/Navbar.astro";
 </html>
 
 <style>
+	html {
+		scrollbar-gutter: stable;
+	}
+
 	:global(.dark) .svgFill {
 		fill: rgb(168 85 247);
 	}

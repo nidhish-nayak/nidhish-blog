@@ -22,6 +22,13 @@ const myPost = "This is post 1";
 console.log(myPost);
 ```
 
+```css
+.idea {
+	background-image: url(http://www.google.com);
+	object-background: url(http://www.google.com);
+}
+```
+
 1. **Installing Astro**: First, I created a new Astro project and set up my online accounts.
 
 2. **Making Pages**: I then learned how to make pages by creating new `.astro` files and placing them in the `src/pages/` folder.
