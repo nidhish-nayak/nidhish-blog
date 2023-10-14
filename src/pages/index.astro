@@ -1,6 +1,5 @@
 ---
 import Posts from "../components/Posts.astro";
-import SearchWidget from "../components/SearchWidget.astro";
 import BlogPost from "../layouts/BlogPost.astro";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
@@ -8,6 +7,5 @@ const indexTitle = "Blogs";
 ---
 
 <BlogPost title={indexTitle}>
-	<SearchWidget />
 	<Posts allPosts={allPosts} />
 </BlogPost>
