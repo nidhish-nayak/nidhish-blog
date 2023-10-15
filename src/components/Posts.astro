@@ -19,7 +19,7 @@ const { allPosts, isHomePage } = Astro.props;
 					{allPosts
 						.slice(2)
 						.map((postData, index) =>
-							index <= 23 ? <Post post={postData} /> : null
+							index <= 13 ? <Post post={postData} /> : null
 						)}
 				</div>
 			</>
