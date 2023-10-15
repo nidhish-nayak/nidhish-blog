@@ -1,0 +1,15 @@
+---
+import BlogPost from "../layouts/BlogPost.astro";
+import SearchBar from "../components/SearchBar.jsx";
+
+const allPosts = await Astro.glob("../pages/posts/*.md");
+const searchTitle = "Search";
+---
+
+<BlogPost title={searchTitle}>
+	<section
+		class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3"
+	>
+		{allPosts.map((post) => <SearchBar props={post} client:visible />)}
+	</section>
+</BlogPost>

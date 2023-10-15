@@ -1,18 +1,44 @@
 ---
 import Post from "./Post.astro";
-const { allPosts } = Astro.props;
+const { allPosts, isHomePage } = Astro.props;
 ---
 
 <section>
-	<div class="grid items-start justify-between gap-8 md:grid-cols-2">
-		{
-			allPosts
-				.reverse()
-				.slice(0, 2)
-				.map((postData, index) => <Post post={postData} index={index} />)
-		}
-	</div>
-	<div class="grid items-start justify-between gap-8 mt-8 md:grid-cols-3">
-		{allPosts.slice(2).map((postData) => <Post post={postData} />)}
-	</div>
+	{
+		isHomePage ? (
+			<>
+				<div class="grid items-start justify-between gap-8 md:grid-cols-2">
+					{allPosts
+						.reverse()
+						.slice(0, 2)
+						.map((postData, index) => (
+							<Post post={postData} index={index} />
+						))}
+				</div>
+				<div class="grid items-start justify-between gap-8 mt-8 md:grid-cols-3">
+					{allPosts
+						.slice(2)
+						.map((postData, index) =>
+							index <= 23 ? <Post post={postData} /> : null
+						)}
+				</div>
+			</>
+		) : (
+			<>
+				<div class="grid items-start justify-between gap-8 md:grid-cols-2">
+					{allPosts
+						.reverse()
+						.slice(0, 2)
+						.map((postData, index) => (
+							<Post post={postData} index={index} />
+						))}
+				</div>
+				<div class="grid items-start justify-between gap-8 mt-8 md:grid-cols-3">
+					{allPosts.slice(2).map((postData) => (
+						<Post post={postData} />
+					))}
+				</div>
+			</>
+		)
+	}
 </section>
