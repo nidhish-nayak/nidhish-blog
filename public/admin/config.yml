@@ -33,17 +33,27 @@ collections:
           name: "readTime",
           widget: "string",
         }
-      - { label: "Thumbnail Image", name: { image.url }, widget: "image" }
+      - { label: "Thumbnail Image", name: "image", fields: {
       - {
-          label: "Image Name",
-          name: { image.alt },
-          widget: "string",
-          default:"My Thumbnail",
-        }
-      - {
-          label: "Low quality thumbnail image",
-          name: { image.lazyUrl },
+          label: "Image url",
+          name: "url",
           widget: "image",
         }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Image name",
+          name: "alt",
+          widget: "string",
+          optional: true
+        }
+      - {
+          label: "Low quality Image",
+          name: "lazyUrl",
+          widget: "image",
+          optional: true
+        }
+        
+      } 
+
+      }
+      # - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
