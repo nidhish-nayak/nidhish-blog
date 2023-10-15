@@ -33,5 +33,4 @@ collections:
           name: "readTime",
           widget: "string",
         }
-      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
