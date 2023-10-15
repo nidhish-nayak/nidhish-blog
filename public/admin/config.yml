@@ -43,13 +43,11 @@ collections:
           label: "Image name",
           name: "alt",
           widget: "string",
-          optional: true
         }
       - {
           label: "Low quality Image",
           name: "lazyUrl",
           widget: "image",
-          optional: true
         }
         
       } 
