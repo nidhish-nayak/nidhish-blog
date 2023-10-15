@@ -11,8 +11,6 @@ import Navbar from "../components/Navbar.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"
-		></script>
 	</head>
 	<body
 		class="px-5 mx-auto antialiased xl:px-0 md:max-w-6xl overflow-x-hidden
@@ -70,23 +68,6 @@ import Navbar from "../components/Navbar.astro";
 			<slot />
 		</section>
 		<Footer />
-		<script>
-			declare global {
-				interface Window {
-					netlifyIdentity: any;
-				}
-			}
-
-			if (window.netlifyIdentity) {
-				window.netlifyIdentity.on("init", (user: any) => {
-					if (!user) {
-						window.netlifyIdentity.on("login", () => {
-							document.location.href = "/admin/";
-						});
-					}
-				});
-			}
-		</script>
 	</body>
 </html>
 
