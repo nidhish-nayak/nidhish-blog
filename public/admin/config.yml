@@ -33,17 +33,17 @@ collections:
           name: "readTime",
           widget: "string",
         }
-      - { label: "Thumbnail Image", name: "image.url", widget: "image" }
+      - { label: "Thumbnail Image", name: { image.url }, widget: "image" }
       - {
           label: "Image Name",
-          name: "image.alt",
+          name: { image.alt },
           widget: "string",
           default:"My Thumbnail",
         }
       - {
           label: "Low quality thumbnail image",
-          name: "image.lazyUrl",
+          name: { image.lazyUrl },
           widget: "image",
         }
-      - { label: "Tags", name: "tags", widget: "array" }
+      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Body", name: "body", widget: "markdown" }
