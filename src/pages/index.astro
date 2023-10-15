@@ -4,9 +4,8 @@ import BlogPost from "../layouts/BlogPost.astro";
 
 const allPosts = await Astro.glob("../pages/posts/*.md");
 const indexTitle = "Blogs";
-const isHomePage = "true";
 ---
 
 <BlogPost title={indexTitle}>
-	<Posts allPosts={allPosts} isHomePage={isHomePage} />
+	<Posts allPosts={allPosts} />
 </BlogPost>

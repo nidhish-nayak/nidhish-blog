@@ -1,0 +1,25 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import SearchBar from "../../components/SearchBar.jsx";
+
+const allPosts = await Astro.glob("../posts/*.md");
+const searchTitle = "Latest";
+---
+
+<BlogPost title={searchTitle}>
+	<div class="flex items-center gap-2 mb-8">
+		<p class="font-semibold">Sort By:</p>
+		<a
+			class="bg-zinc-200 py-1 px-2 rounded-md hover:bg-zinc-800 hover:text-white dark:hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:text-black"
+			href="/blogs">Latest</a
+		>
+		<a
+			class="bg-zinc-200 py-1 px-2 rounded-md hover:bg-zinc-800 hover:text-white dark:hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:text-black"
+			href="/blogs/oldest">Oldest</a
+		>
+	</div>
+
+	<section class="grid grid-cols-1 gap-8 md:grid-cols-2">
+		{allPosts.map((post) => <SearchBar props={post} client:visible />)}
+	</section>
+</BlogPost>

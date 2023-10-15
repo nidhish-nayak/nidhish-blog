@@ -54,7 +54,15 @@ import Navbar from "../components/Navbar.astro";
 				<p
 					class="mt-2 text-sm font-semibold underline uppercase rounded-md underline-offset-2"
 				>
-					{title === "Blogs" ? "Latest" : title === "Search" ? "All Blogs" : ""}
+					{
+						title === "Blogs"
+							? "Trending"
+							: title === "Latest"
+							? "All Blogs"
+							: title === "Oldest"
+							? "All Blogs"
+							: ""
+					}
 				</p>
 			</div>
 			<slot />
