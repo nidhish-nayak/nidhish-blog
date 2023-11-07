@@ -2,7 +2,7 @@
 layout: "../../layouts/MarkdownPost.astro"
 title: "Typescript Basics"
 author: Nidhish
-description: "After learning some Astro, I couldn't stop!"
+description: "Basics of typescript and guide on how to use it."
 pubDate: 2023-11-08
 readTime: "10 min read"
 image:
