@@ -1,63 +1,111 @@
 ---
+import { Image } from "astro:assets";
 import BlogPost from "../layouts/BlogPost.astro";
 
 const pageTitle = "About Me";
 
-const identity = {
-	firstName: "Nidhish",
-	country: "India",
-	occupation: "Software Engineer",
-	hobbies: ["singing", "drawing", "cricket"],
-};
-
 const skills = [
-	"SASS",
-	"JavaScript",
-	"Typescript",
-	"React",
-	"Redux",
-	"Node",
-	"Express",
+	"React.js",
+	"Node.js",
+	"Express.js",
+	"Next.js",
 	"MongoDB",
+	"Redux Toolkit",
 	"GraphQL",
 	"Styled Components",
 	"Firebase",
-	"Git",
 	"Astro",
+	"Jest",
+	"React Testing Library",
+	"Tailwind CSS",
+	"GSAP",
+	"SvelteKit",
+];
+
+const languages = [
+	"Javascript",
+	"Typescript",
+	"Svelte",
+	"HTML",
+	"CSS",
+	"SASS/SCSS",
 ];
 ---
 
 <BlogPost title={pageTitle}>
-	<article>
-		<h2>Description</h2>
-		<p>
-			This site will update as I keep learning more things, so keep checking
-			back and see how my journey is going!
-		</p>
-		<h2 class="mt-4 font-semibold">Here are a few details about me:</h2>
-		<ul>
-			<li>My name is {identity.firstName}.</li>
-			<li>
-				I live in {identity.country} and I work as a {identity.occupation}.
-			</li>
-			{
-				identity.hobbies.length >= 2 && (
-					<li>
-						Two of my hobbies are: {identity.hobbies[0]} and{" "}
-						{identity.hobbies[1]}
-					</li>
-				)
-			}
-		</ul>
-		<h2 class="mt-4 font-semibold">My skills are:</h2>
-		<ul class="flex flex-wrap mt-2">
-			{
-				skills.map((skill) => (
-					<li class="p-2 mb-2 mr-2 font-semibold rounded-lg bg-zinc-200 text-button-dark dark:bg-button-dark dark:text-button-light">
-						{skill}
-					</li>
-				))
-			}
-		</ul>
+	<section class="flex flex-col gap-8 md:gap-32 md:flex-row">
+		<article>
+			<div class="flex flex-col gap-8 w-[90%]">
+				<p class="text-lg">
+					Hi, my name is Nidhish D Nayak. I am a Software Engineer based in
+					Bangalore, India. I have more than two years experience of developing
+					web applications and work heavily on the side of front-end
+					development.
+				</p>
+				<p class="text-lg">
+					I'm passionate about creating intuitive and visually appealing user
+					interfaces. My journey in web development started with a strong
+					foundation in JavaScript and Typescript. I have continued to expand my
+					skill set to include various front-end libraries and frameworks like
+					React, NextJS and SvelteKit.
+				</p>
+			</div>
+		</article>
+		<Image
+			src="https://ik.imagekit.io/fabric01/nid-blog/nidhish_profile?updatedAt=1699367547769"
+			alt="Profile_Image"
+			width={300}
+			height={300}
+			quality="high"
+			loading="lazy"
+			decoding="async"
+			class="w-[300px] h-full object-contain md:rounded-sm rounded-md"
+		/>
+	</section>
+	<article class="flex flex-col gap-8 mt-8 md:mt-2 justify-evenly">
+		<h1
+			class="text-3xl font-bold tracking-tighter dark:border-zinc-800 border-zinc-200 md:text-4xl lg:text-5xl"
+		>
+			<div class="flex items-end">
+				<span>Skills</span>
+				<span class="block ml-2 mb-1 w-2 h-2 bg-[#ffa552] dark:bg-purple-600"
+				></span>
+			</div>
+		</h1>
+		<div class="flex flex-col gap-8 md:flex-row justify-evenly">
+			<div>
+				<h2 class="mb-4 font-semibold uppercase">Languages</h2>
+				<ul class="flex flex-wrap gap-[1px] mt-2">
+					{
+						languages.map((language) => (
+							<li class="px-3 py-2 mb-2 mr-2 font-semibold rounded-full bg-zinc-200 text-button-dark dark:bg-button-dark dark:text-button-light">
+								{language}
+							</li>
+						))
+					}
+				</ul>
+			</div>
+			<div>
+				<h2 class="mb-4 font-semibold uppercase">
+					Frameworks/ Libraries/ Others
+				</h2>
+				<ul class="flex flex-wrap mt-2 gap-[1px] items-center">
+					{
+						skills.map((skill) => (
+							<li class="px-3 py-2 mb-2 mr-2 font-semibold rounded-full bg-zinc-200 text-button-dark dark:bg-button-dark dark:text-button-light">
+								{skill}
+							</li>
+						))
+					}
+					<li class="font-semibold">and more...</li>
+				</ul>
+				<p class="mt-8 text-lg font-semibold">
+					Developers need <span
+						class="font-bold text-[#ff8c4a] dark:text-purple-500"
+						>to learn everyday</span
+					> so this list could get really long 😅.
+				</p>
+			</div>
+		</div>
 	</article>
 </BlogPost>
