@@ -3,7 +3,7 @@ import { MY_SOCIAL_LINKS } from "../consts";
 const today = new Date();
 ---
 
-<footer class="mt-14 border-t dark:border-zinc-800 border-zinc-200">
+<footer class="border-t mt-14 dark:border-zinc-800 border-zinc-200">
 	<p class="my-2">
 		&copy; {today.getFullYear()} Nidhish D Nayak. All rights reserved.
 	</p>
@@ -28,7 +28,7 @@ const today = new Date();
 		</a>
 		<a
 			title="Instagram"
-			href="mailto:nidhibelthangady@gmail.com"
+			href={MY_SOCIAL_LINKS.instagram}
 			target="_blank"
 			class="p-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
 		>
@@ -46,7 +46,7 @@ const today = new Date();
 		</a>
 		<a
 			title="Github"
-			href="https://github.com/nidhish-nayak"
+			href={MY_SOCIAL_LINKS.github}
 			target="_blank"
 			class="p-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800"
 		>

@@ -23,43 +23,25 @@ const { frontmatter } = Astro.props;
 	});
 </script>
 
-<BlogPost title={frontmatter.title} backButton="true">
+<BlogPost title={frontmatter.title} backButton="true" blog="true">
+	<div class="flex items-center justify-center gap-2">
+		<p class="text-center">
+			{
+				new Date(frontmatter.pubDate).toDateString().slice(4, 10) +
+					", " +
+					new Date(frontmatter.pubDate).toDateString().slice(10, 15)
+			}
+		</p>
+		<span>-</span>
+		<p class="font-semibold">
+			{frontmatter.author}
+		</p>
+	</div>
 	<section
-		class="flex flex-wrap pb-8 mt-6 mb-10 border-b border-dashed sm:justify-between border-zinc-300 dark:border-zinc-800"
+		class="flex flex-wrap pb-8 mb-10 border-b border-dashed sm:justify-center border-zinc-300 dark:border-zinc-800"
 	>
-		<div class="md:max-w-sm">
-			<p class="mt-2 mb-4"><em>{frontmatter.description}</em></p>
-			<p>
-				<span class="mr-1 font-semibold">Author:</span>
-				{frontmatter.author}
-			</p>
-			<p>
-				<span class="mr-1 font-semibold">Published:</span>
-				{
-					new Date(frontmatter.pubDate).toDateString().slice(4, 10) +
-						", " +
-						new Date(frontmatter.pubDate).toDateString().slice(10, 15)
-				}
-			</p>
-			<div class="flex gap-2 mt-2">
-				<p class="font-semibold">Tags:</p>
-				<div class="flex flex-wrap gap-2 items-center justify-start">
-					{
-						frontmatter.tags.map((tag) => {
-							return (
-								<a href={`/tags/${tag}`}>
-									<p class="px-2 py-1 rounded-sm bg-zinc-200 dark:bg-button-dark">
-										{tag.toLowerCase()}
-									</p>
-								</a>
-							);
-						})
-					}
-				</div>
-			</div>
-		</div>
 		<div
-			class="my-8 overflow-hidden blur-load"
+			class="my-8 overflow-hidden rounded-md blur-load"
 			style={frontmatter.image.lazyUrl
 				? `background-image: url(${frontmatter.image.lazyUrl})`
 				: ""}
@@ -72,6 +54,23 @@ const { frontmatter } = Astro.props;
 				width="1000"
 				height="500"
 			/>
+		</div>
+		<div class="flex flex-col items-center justify-center gap-6">
+			<p class="text-xl"><em>{frontmatter.description}</em></p>
+			<div class="flex flex-wrap items-center justify-start gap-2">
+				<p class="font-semibold">Tags:</p>
+				{
+					frontmatter.tags.map((tag) => {
+						return (
+							<a href={`/tags/${tag}`}>
+								<p class="px-3 py-1 rounded-full bg-zinc-200 hover:bg-orange-400 dark:hover:bg-violet-600 dark:bg-button-dark">
+									{tag.toLowerCase()}
+								</p>
+							</a>
+						);
+					})
+				}
+			</div>
 		</div>
 	</section>
 	<article class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert">

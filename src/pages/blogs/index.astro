@@ -1,6 +1,6 @@
 ---
-import BlogPost from "../../layouts/BlogPost.astro";
 import SearchBar from "../../components/SearchBar.jsx";
+import BlogPost from "../../layouts/BlogPost.astro";
 
 const allPosts = await Astro.glob("../posts/*.md");
 const searchTitle = "Latest";
@@ -20,6 +20,10 @@ const searchTitle = "Latest";
 	</div>
 
 	<section class="grid grid-cols-1 gap-8 md:grid-cols-2">
-		{allPosts.map((post) => <SearchBar props={post} client:visible />)}
+		{
+			allPosts
+				.reverse()
+				.map((post) => <SearchBar props={post} client:visible />)
+		}
 	</section>
 </BlogPost>
