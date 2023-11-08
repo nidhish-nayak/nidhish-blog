@@ -2,6 +2,8 @@
 
 This is a personal blog website built using the Astro MPA (Multi Page Application) framework. This project is designed to help me create and manage my blog content efficiently, with a clean and minimalistic design. Whether you're a writer, blogger, or content creator, you can use this as a template.
 
+![Desktop - 1](https://github.com/nidhish-nayak/nidhish-blog/assets/76598208/319ec7bb-c9bd-49b5-b536-9a0b73ca5732)
+
 ## Features
 
 - **Astro MPA Framework:** Nidhish Blog is built on top of the Astro MPA framework, which allows for fast loading times and optimal performance.
