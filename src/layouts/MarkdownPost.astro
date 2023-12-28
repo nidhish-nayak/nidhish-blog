@@ -1,94 +1,97 @@
 ---
 import { Image } from "astro:assets";
 import BlogPost from "./BlogPost.astro";
+
 const { frontmatter } = Astro.props;
 ---
 
 <script>
-	// Lazy Loading
-	const blurDivs = document.querySelectorAll(".blur-load");
+    // Lazy Loading
+    const blurDivs = document.querySelectorAll(".blur-load");
 
-	blurDivs.forEach((div) => {
-		function loaded() {
-			// Show image
-			div.classList.add("loaded");
-		}
+    blurDivs.forEach((div) => {
+        function loaded() {
+            // Show image
+            div.classList.add("loaded");
+        }
 
-		const img = div.querySelector("img");
-		if (img.complete) {
-			loaded();
-		} else {
-			img.addEventListener("load", loaded);
-		}
-	});
+        const img = div.querySelector("img");
+        if (img.complete) {
+            loaded();
+        } else {
+            img.addEventListener("load", loaded);
+        }
+    });
 </script>
 
 <BlogPost title={frontmatter.title} backButton="true" blog="true">
-	<div class="flex items-center justify-center gap-2">
-		<p class="text-center">
-			{
-				new Date(frontmatter.pubDate).toDateString().slice(4, 10) +
-					", " +
-					new Date(frontmatter.pubDate).toDateString().slice(10, 15)
-			}
-		</p>
-		<span>-</span>
-		<p class="font-semibold">
-			{frontmatter.author}
-		</p>
-	</div>
-	<section
-		class="flex flex-wrap pb-8 mb-10 border-b border-dashed sm:justify-center border-zinc-300 dark:border-zinc-800"
-	>
-		<div
-			class="my-8 overflow-hidden rounded-md blur-load"
-			style={frontmatter.image.lazyUrl
-				? `background-image: url(${frontmatter.image.lazyUrl})`
-				: ""}
-		>
-			<Image
-				src={frontmatter.image.url}
-				loading="lazy"
-				class="w-full md:max-w-[1152px] rounded-md block max-h-[500px] object-center"
-				alt={frontmatter.image.alt}
-				width="1000"
-				height="500"
-			/>
-		</div>
-		<div class="flex flex-col items-center justify-center gap-6">
-			<p class="text-xl"><em>{frontmatter.description}</em></p>
-			<div class="flex flex-wrap items-center justify-start gap-2">
-				<p class="font-semibold">Tags:</p>
-				{
-					frontmatter.tags.map((tag) => {
-						return (
-							<a href={`/tags/${tag}`}>
-								<p class="px-3 py-1 rounded-full bg-zinc-200 hover:bg-orange-400 dark:hover:bg-violet-600 dark:bg-button-dark">
-									{tag.toLowerCase()}
-								</p>
-							</a>
-						);
-					})
-				}
-			</div>
-		</div>
-	</section>
-	<article class="prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert">
-		<slot />
-	</article>
+    <div class="flex items-center justify-center gap-2">
+        <p class="text-center">
+            {
+                new Date(frontmatter.pubDate).toDateString().slice(4, 10) +
+                    ", " +
+                    new Date(frontmatter.pubDate).toDateString().slice(10, 15)
+            }
+        </p>
+        <span>-</span>
+        <p class="font-semibold">
+            {frontmatter.author}
+        </p>
+    </div>
+    <section
+        class="flex flex-wrap pb-8 mb-10 border-b border-dashed sm:justify-center border-zinc-300 dark:border-zinc-800"
+    >
+        <div
+            class="my-8 overflow-hidden rounded-md blur-load"
+            style={frontmatter.image.lazyUrl
+                ? `background-image: url(${frontmatter.image.lazyUrl})`
+                : ""}
+        >
+            <Image
+                src={frontmatter.image.url}
+                loading="lazy"
+                class="w-full md:max-w-[1152px] rounded-md block max-h-[500px] object-center"
+                alt={frontmatter.image.alt}
+                width="1000"
+                height="500"
+            />
+        </div>
+        <div class="flex flex-col items-center justify-center gap-6">
+            <p class="text-xl"><em>{frontmatter.description}</em></p>
+            <div class="flex flex-wrap items-center justify-start gap-2">
+                <p class="font-semibold">Tags:</p>
+                {
+                    frontmatter.tags.map((tag) => {
+                        return (
+                            <a href={`/tags/${tag}`}>
+                                <p class="px-3 py-1 rounded-full bg-zinc-200 hover:bg-orange-400 dark:hover:bg-violet-600 dark:bg-button-dark">
+                                    {tag.toLowerCase()}
+                                </p>
+                            </a>
+                        );
+                    })
+                }
+            </div>
+        </div>
+    </section>
+    <article
+        class="mx-auto prose sm:prose-md md:prose-lg lg:prose-xl dark:prose-invert prose-code:bg-[#24292e] prose-code:text-white prose-code:px-2 prose-code:py-1 prose-code:mx-1 prose-code:rounded-lg after:prose-code:bg-black before:prose-code:bg-black"
+    >
+        <slot />
+    </article>
 </BlogPost>
 
 <style>
-	.blur-load {
-		background-size: cover;
-		background-position: center;
-	}
+    .blur-load {
+        background-size: cover;
+        background-position: center;
+    }
 
-	.blur-load.loaded > img {
-		opacity: 1;
-	}
+    .blur-load.loaded > img {
+        opacity: 1;
+    }
 
-	.blur-load > img {
-		opacity: 0;
-	}
+    .blur-load > img {
+        opacity: 0;
+    }
 </style>

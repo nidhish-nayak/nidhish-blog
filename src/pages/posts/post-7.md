@@ -1,20 +1,18 @@
 ---
 layout: "../../layouts/MarkdownPost.astro"
-title: "Setup nodejs with typescript & zod"
+title: "Setup node with typescript & zod"
 author: Nidhish
-description: "All you need to setup a local nodejs server with express, typescript and zod."
+description: "All you need for setting up a local node server with express, typescript and zod."
 pubDate: 2023-12-28
-readTime: "15 min read"
+readTime: "8 min read"
 image:
-    url: "https://ik.imagekit.io/fabric01/nid-blog/zod.webp?updatedAt=1703755126985"
+    url: "https://ik.imagekit.io/fabric01/nid-blog/tszod.webp?updatedAt=1703758115117"
     alt: "nodejs with typescript and zod"
-    lazyUrl: "https://ik.imagekit.io/fabric01/nid-blog/zod_min.png?updatedAt=1703755126058"
+    lazyUrl: "https://ik.imagekit.io/fabric01/nid-blog/tszod_min.png?updatedAt=1703758114637"
 tags: ["guide", "setup", "nodejs", "expressjs", "typescript", "zod"]
 ---
 
-# Setup NodeJS with TypeScript & Zod
-
-## Introduction
+# Introduction
 
 Building a robust and maintainable Express.js server requires careful consideration of your development stack. In this guide, we'll walk through the process of setting up a Node.js server using TypeScript for static typing and Zod for schema validation. This powerful combination enhances code quality and improves the overall development experience. Let's dive in!
 

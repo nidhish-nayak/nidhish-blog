@@ -5,80 +5,80 @@ import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/n-icon.jpg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body
-		class="px-5 mx-auto antialiased xl:px-0 md:max-w-6xl overflow-x-hidden
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/n-icon.jpg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body
+        class="px-5 mx-auto antialiased xl:px-0 md:max-w-6xl overflow-x-hidden
 		bg-gradient-to-b from-[#FAFAFA] via-[#FAFAFA] to-light-background
 		text-light-foreground dark:bg-gradient-to-b dark:from-[#0A0910] dark:via-[#0A0910] dark:to-black dark:text-dark-foreground"
-	>
-		<Navbar />
-		<section class="min-h-[70vh]">
-			{
-				backButton ? (
-					<a
-						href="javascript:history.back()"
-						class="p-2 font-semibold rounded-md bg-zinc-800 text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
-					>
-						&larr; Back
-					</a>
-				) : (
-					<span />
-				)
-			}
-			<div
-				class=`flex items-center mt-8 mb-4 sm:mt-12 ${blog? "justify-center sm:mb-4" : "justify-between sm:mb-8"}`
-			>
-				<h1
-					class="text-3xl font-bold tracking-tighter dark:border-zinc-800 border-zinc-200 md:text-4xl lg:text-5xl"
-				>
-					{
-						tagTitle ? (
-							<span>
-								Posts tagged with{" "}
-								<span class="text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-purple-600 dark:via-purple-500 dark:to-purple-400 bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400">
-									{tagTitle}
-								</span>
-							</span>
-						) : (
-							<div class="flex items-end">
-								<span>{title}</span>
-								<span class="block ml-2 mb-1 w-2 h-2 bg-[#ffa552] dark:bg-purple-600" />
-							</div>
-						)
-					}
-				</h1>
-				<p
-					class="mt-2 text-sm font-semibold underline uppercase rounded-md underline-offset-2"
-				>
-					{
-						title === "Blogs"
-							? "Trending"
-							: title === "Latest"
-							? "All Blogs"
-							: title === "Oldest"
-							? "All Blogs"
-							: ""
-					}
-				</p>
-			</div>
-			<slot />
-		</section>
-		<Footer />
-	</body>
+    >
+        <Navbar />
+        <section class="min-h-[70vh]">
+            {
+                backButton ? (
+                    <a
+                        href="javascript:history.back()"
+                        class="p-2 font-semibold rounded-md bg-zinc-800 text-button-light hover:bg-black dark:bg-button-light dark:text-button-dark dark:hover:bg-zinc-200"
+                    >
+                        &larr; Back
+                    </a>
+                ) : (
+                    <span />
+                )
+            }
+            <div
+                class=`flex items-center mt-8 mb-4 sm:mt-12 ${blog? "justify-center sm:mb-4" : "justify-between sm:mb-8"}`
+            >
+                <h1
+                    class="text-3xl font-bold tracking-tighter dark:border-zinc-800 border-zinc-200 md:text-4xl lg:text-5xl"
+                >
+                    {
+                        tagTitle ? (
+                            <span>
+                                Posts tagged with{" "}
+                                <span class="text-transparent bg-clip-text dark:bg-gradient-to-r dark:from-purple-600 dark:via-purple-500 dark:to-purple-400 bg-gradient-to-r from-orange-500 via-orange-400 to-amber-400">
+                                    {tagTitle}
+                                </span>
+                            </span>
+                        ) : (
+                            <div class="flex items-end">
+                                <span>{title}</span>
+                                <span class="block ml-2 mb-1 w-2 h-2 bg-[#ffa552] dark:bg-purple-600" />
+                            </div>
+                        )
+                    }
+                </h1>
+                <p
+                    class="mt-2 text-sm font-semibold underline uppercase rounded-md underline-offset-2"
+                >
+                    {
+                        title === "Blogs"
+                            ? "Trending"
+                            : title === "Latest"
+                              ? "All Blogs"
+                              : title === "Oldest"
+                                ? "All Blogs"
+                                : ""
+                    }
+                </p>
+            </div>
+            <slot />
+        </section>
+        <Footer />
+    </body>
 </html>
 
 <style>
-	html {
-		scrollbar-gutter: stable;
-	}
+    html {
+        scrollbar-gutter: stable;
+    }
 
-	:global(.dark) .svgFill {
-		fill: rgb(168 85 247);
-	}
+    :global(.dark) .svgFill {
+        fill: rgb(168 85 247);
+    }
 </style>
