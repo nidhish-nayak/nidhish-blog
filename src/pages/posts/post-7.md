@@ -9,7 +9,7 @@ image:
     url: "https://ik.imagekit.io/fabric01/nid-blog/tszod.webp?updatedAt=1703758115117"
     alt: "nodejs with typescript and zod"
     lazyUrl: "https://ik.imagekit.io/fabric01/nid-blog/tszod_min.png?updatedAt=1703758114637"
-tags: ["guide", "setup", "nodejs", "expressjs", "typescript", "zod"]
+tags: ["guide", "setup", "node", "express", "typescript", "zod"]
 ---
 
 # Introduction
