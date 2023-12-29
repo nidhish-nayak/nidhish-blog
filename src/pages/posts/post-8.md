@@ -6,9 +6,9 @@ description: "Use cases of JWT and implementation of auth."
 pubDate: 2023-12-29
 readTime: "20 min read"
 image:
-    url: "https://ik.imagekit.io/fabric01/nid-blog/tszod.webp?updatedAt=1703758115117"
+    url: "https://ik.imagekit.io/fabric01/nid-blog/jwtLogo.webp?updatedAt=1703850530618"
     alt: "JWT auth"
-    lazyUrl: "https://ik.imagekit.io/fabric01/nid-blog/tszod_min.png?updatedAt=1703758114637"
+    lazyUrl: "https://ik.imagekit.io/fabric01/nid-blog/jwtLogo_min.png?updatedAt=1703850530581"
 tags: ["guide", "syntax", "node", "express", "jwt", "auth", "mongodb"]
 ---
 
